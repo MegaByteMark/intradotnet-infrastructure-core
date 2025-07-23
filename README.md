@@ -1,6 +1,6 @@
-# IntraDotNet Infrastructure Core
+# IntraDotNet.Domain.Core
 
-The `IntraDotNet.Infrastructure.Core` library provides a set of interfaces that help implement common auditing and versioning patterns in your domain entities. These interfaces are designed to work seamlessly with Entity Framework Core and other ORM frameworks to automatically track entity lifecycle events.
+The `IntraDotNet.Domain.Core` library provides a set of interfaces that help implement common auditing and versioning patterns in your domain entities. These interfaces are designed to work seamlessly with Entity Framework Core and other ORM frameworks to automatically track entity lifecycle events.
 
 ## Features
 
@@ -13,7 +13,7 @@ The `IntraDotNet.Infrastructure.Core` library provides a set of interfaces that 
 
 ### Core Auditing Interfaces
 
-#### [`ICreateAuditable`](intradotnet-infrastructure-core/ICreateAuditable.cs)
+#### [`ICreateAuditable`](intradotnet-domain-core/ICreateAuditable.cs)
 Tracks entity creation information:
 ```csharp
 public interface ICreateAuditable
@@ -23,7 +23,7 @@ public interface ICreateAuditable
 }
 ```
 
-#### [`IUpdateAuditable`](intradotnet-infrastructure-core/IUpdateAuditable.cs)
+#### [`IUpdateAuditable`](intradotnet-domain-core/IUpdateAuditable.cs)
 Tracks entity update information:
 ```csharp
 public interface IUpdateAuditable
@@ -33,7 +33,7 @@ public interface IUpdateAuditable
 }
 ```
 
-#### [`ISoftDeleteAuditable`](intradotnet-infrastructure-core/ISoftDeleteAuditable.cs)
+#### [`ISoftDeleteAuditable`](intradotnet-domain-core/ISoftDeleteAuditable.cs)
 Tracks soft deletion without physically removing entities:
 ```csharp
 public interface ISoftDeleteAuditable
@@ -43,7 +43,7 @@ public interface ISoftDeleteAuditable
 }
 ```
 
-#### [`IAuditable`](intradotnet-infrastructure-core/IAuditable.cs)
+#### [`IAuditable`](intradotnet-domain-core/IAuditable.cs)
 Combines all auditing interfaces for comprehensive tracking:
 ```csharp
 public interface IAuditable : ICreateAuditable, IUpdateAuditable, ISoftDeleteAuditable
@@ -53,7 +53,7 @@ public interface IAuditable : ICreateAuditable, IUpdateAuditable, ISoftDeleteAud
 
 ### Concurrency Control
 
-#### [`IRowVersion`](intradotnet-infrastructure-core/IRowVersion.cs)
+#### [`IRowVersion`](intradotnet-domain-core/IRowVersion.cs)
 Provides optimistic concurrency control:
 ```csharp
 public interface IRowVersion
@@ -68,7 +68,7 @@ public interface IRowVersion
 ### Basic Entity with Full Auditing
 
 ```csharp
-using IntraDotNet.Infrastructure.Core;
+using IntraDotNet.Domain.Core;
 
 public class Product : IAuditable, IRowVersion
 {
@@ -92,7 +92,7 @@ public class Product : IAuditable, IRowVersion
 ### Entity with Selective Auditing
 
 ```csharp
-using IntraDotNet.Infrastructure.Core;
+using IntraDotNet.Domain.Core;
 
 public class Category : ICreateAuditable, IUpdateAuditable
 {
@@ -195,13 +195,13 @@ var activeProducts = context.Products.WhereNotDeleted().ToList();
 Install the package via NuGet:
 
 ```bash
-dotnet add package IntraDotNet.Infrastructure.Core
+dotnet add package IntraDotNet.Domain.Core
 ```
 
 Or via Package Manager Console:
 
 ```powershell
-Install-Package IntraDotNet.Infrastructure.Core
+Install-Package IntraDotNet.Domain.Core
 ```
 
 ## Requirements
@@ -219,4 +219,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Repository
 
-[https://github.com/MegaByteMark/intradotnet-infrastructure-core](https://github.com/MegaByteMark/intradotnet-infrastructure-core)
+[https://github.com/MegaByteMark/intradotnet-domain-core](https://github.com/MegaByteMark/intradotnet-domain-core)

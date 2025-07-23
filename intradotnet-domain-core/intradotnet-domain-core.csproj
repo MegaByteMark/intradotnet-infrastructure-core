@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <RootNamespace>IntraDotNet.Domain.Core</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <PackageId>IntraDotNet.Domain.Core</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>MegaByteMark</Authors>
+    <Description>A convenience library for reducing common domain layer boilerplate.</Description>
+    <PackageTags>Utilities;Helpers;Domain;CleanArchitecture;DotNet;CSharp</PackageTags>
+    <RepositoryUrl>https://github.com/MegaByteMark/intradotnet-domain-core</RepositoryUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/MegaByteMark/intradotnet-domain-core</PackageProjectUrl>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="../README.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
+
+</Project>

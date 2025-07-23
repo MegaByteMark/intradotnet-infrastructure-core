@@ -1,4 +1,4 @@
-namespace IntraDotNet.Infrastructure.Core;
+namespace IntraDotNet.Domain.Core;
 
 /// <summary>
 /// Represents an entity that is soft-deletable, meaning it tracks deletion information without physically removing it from the database.

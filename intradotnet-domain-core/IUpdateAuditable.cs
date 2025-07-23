@@ -1,4 +1,4 @@
-namespace IntraDotNet.Infrastructure.Core;
+namespace IntraDotNet.Domain.Core;
 
 /// <summary>
 /// Represents an entity that is auditable, meaning it tracks update information.

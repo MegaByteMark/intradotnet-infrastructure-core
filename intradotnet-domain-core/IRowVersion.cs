@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace IntraDotNet.Infrastructure.Core;
+namespace IntraDotNet.Domain.Core;
 
 /// <summary>
 /// Represents an entity that has a row version for concurrency control.
